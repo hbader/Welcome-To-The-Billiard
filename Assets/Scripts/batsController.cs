@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class batsController: MonoBehaviour
 {
+
+    public scoreManager manager;
     public float forceVariable;
     public Rigidbody rb;
     GameObject target;
@@ -15,6 +18,7 @@ public class batsController: MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player");
         moveSpeed = 200*Time.deltaTime;
+        manager = GameObject.Find("GameManager").GetComponent<scoreManager>();
     }
 
     private void Update()
@@ -31,6 +35,7 @@ public class batsController: MonoBehaviour
                 //add kill counter maybe?
                 col.attachedRigidbody.AddForce(rb.velocity*forceVariable);
                 Destroy(gameObject);
+                manager.updateScore(col.attachedRigidbody.velocity.magnitude);
             }
             else
             {
@@ -38,6 +43,7 @@ public class batsController: MonoBehaviour
                // Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity);
                 Destroy(col.gameObject);
                 target = null;
+                manager.showGameOver();
             }
         }
     }
