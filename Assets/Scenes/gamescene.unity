@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 360362952}
   - component: {fileID: 360362956}
   - component: {fileID: 360362957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1842,6 +1842,7 @@ MonoBehaviour:
   - {fileID: 1254701601}
   monsters:
   - {fileID: 3761520336204908784, guid: fa070b566254b894f80aa06e1af76bc0, type: 3}
+  child: {fileID: 1089073341892518261, guid: 3f270fc57ca1f9843b45469b273b3906, type: 3}
 --- !u!4 &1316481654
 Transform:
   m_ObjectHideFlags: 0
@@ -2380,7 +2381,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 8.149033, z: 8.94e-43, w: 2.4e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

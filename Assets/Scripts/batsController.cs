@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class batsController: MonoBehaviour
 {
+    public float forceVariable;
     public Rigidbody rb;
     GameObject target;
     float moveSpeed;
@@ -26,8 +27,9 @@ public class batsController: MonoBehaviour
         if (col.gameObject.tag.Equals("Player")) {
             if (col.attachedRigidbody.velocity.magnitude > 5)
             {
-               // Instantiate(explosion, transform.position, Quaternion.identity);
+                // Instantiate(explosion, transform.position, Quaternion.identity);
                 //add kill counter maybe?
+                col.attachedRigidbody.AddForce(rb.velocity*forceVariable);
                 Destroy(gameObject);
             }
             else
