@@ -6,9 +6,12 @@ public class enemySpawnerControl : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject[] monsters;
+    public GameObject child;
 
     int randomSpawnpoint, randomMonster;
     public static bool spawnAllowed;
+    private GameObject monster;
+    private GameObject attatchedChild;
 
     private void Start()
     {
@@ -22,7 +25,11 @@ public class enemySpawnerControl : MonoBehaviour
         {
             randomSpawnpoint = Random.Range(0, spawnPoints.Length);
             randomMonster = Random.Range(0, monsters.Length);
-            Instantiate(monsters[randomMonster], spawnPoints[randomSpawnpoint].position, Quaternion.identity);
+            monster =Instantiate(monsters[randomMonster], spawnPoints[randomSpawnpoint].position, Quaternion.identity);
+            attatchedChild=Instantiate(child, spawnPoints[randomSpawnpoint].position, Quaternion.identity);
+
+            attatchedChild.transform.parent = monster.transform;
+            
         }
     }
 }
