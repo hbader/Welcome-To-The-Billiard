@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public Text modifierText;
     public Text gameOver;
     public Button resetButton;
+    public Button mainMenuButton;
 
     private int score;
     private int round;
@@ -22,6 +23,7 @@ public class UIManager : MonoBehaviour
         modifierText.text = "x1";
         score = 0; round = 1; modifier = 1;
         resetButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
     }
 
     public void updateScore(float speed)
@@ -48,5 +50,6 @@ public class UIManager : MonoBehaviour
     {
         gameOver.text = "Game Over.";
         resetButton.gameObject.SetActive(true);
+        mainMenuButton.gameObject.SetActive(true);
     }
 }
