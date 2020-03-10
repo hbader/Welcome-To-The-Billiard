@@ -17,7 +17,7 @@ public class batsController: MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
-        moveSpeed = 200*Time.deltaTime;
+        moveSpeed = 100*Time.deltaTime;
         manager = GameObject.Find("GameManager").GetComponent<UIManager>();
     }
 
