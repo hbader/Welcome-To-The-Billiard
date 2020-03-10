@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class scoreManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public Text scoreText;
     public Text roundText;
     public Text modifierText;
     public Text gameOver;
+    public Button resetButton;
 
     private int score;
     private int round;
@@ -20,6 +21,7 @@ public class scoreManager : MonoBehaviour
         roundText.text = "Round 1";
         modifierText.text = "x1";
         score = 0; round = 1; modifier = 1;
+        resetButton.gameObject.SetActive(false);
     }
 
     public void updateScore(float speed)
@@ -45,5 +47,6 @@ public class scoreManager : MonoBehaviour
     public void showGameOver()
     {
         gameOver.text = "Game Over.";
+        resetButton.gameObject.SetActive(true);
     }
 }

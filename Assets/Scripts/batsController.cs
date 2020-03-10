@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class batsController: MonoBehaviour
 {
 
-    public scoreManager manager;
+    private UIManager manager;
     public float forceVariable;
     public Rigidbody rb;
     GameObject target;
@@ -18,12 +18,12 @@ public class batsController: MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player");
         moveSpeed = 200*Time.deltaTime;
-        manager = GameObject.Find("GameManager").GetComponent<scoreManager>();
+        manager = GameObject.Find("GameManager").GetComponent<UIManager>();
     }
 
     private void Update()
     {
-        moveEnemy();
+            moveEnemy();
     }
 
     private void OnTriggerEnter(Collider col)
@@ -33,14 +33,14 @@ public class batsController: MonoBehaviour
             {
                 // Instantiate(explosion, transform.position, Quaternion.identity);
                 //add kill counter maybe?
-                col.attachedRigidbody.AddForce(rb.velocity*forceVariable);
+                col.attachedRigidbody.AddForce(rb.velocity * forceVariable);
                 Destroy(gameObject);
                 manager.updateScore(col.attachedRigidbody.velocity.magnitude);
             }
             else
             {
                 enemySpawnerControl.spawnAllowed = false;
-               // Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity);
+                // Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity);
                 Destroy(col.gameObject);
                 target = null;
                 manager.showGameOver();
@@ -61,6 +61,7 @@ public class batsController: MonoBehaviour
         else
         {
             rb.velocity = Vector3.zero;
+            this.StopAllCoroutines();
         }
     }
 }
