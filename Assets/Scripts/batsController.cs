@@ -10,14 +10,13 @@ public class batsController: MonoBehaviour
     public float forceVariable;
     public Rigidbody rb;
     GameObject target;
-    float moveSpeed;
+    public float speed;
     Vector3 directionToTarget;
    // public GameObject explosion;
 
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
-        moveSpeed = 100*Time.deltaTime;
         manager = GameObject.Find("GameManager").GetComponent<UIManager>();
     }
 
@@ -39,7 +38,6 @@ public class batsController: MonoBehaviour
             }
             else
             {
-                enemySpawnerControl.spawnAllowed = false;
                 // Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity);
                 Destroy(col.gameObject);
                 target = null;
@@ -54,9 +52,9 @@ public class batsController: MonoBehaviour
         {
             directionToTarget = (target.transform.position - transform.position).normalized;
             rb.velocity = 
-                new Vector3(directionToTarget.x * moveSpeed,
+                new Vector3(directionToTarget.x * speed*Time.deltaTime,
                 0,
-                directionToTarget.z * moveSpeed);
+                directionToTarget.z * speed*Time.deltaTime);
         }
         else
         {

@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342f0a642d65a8740be88921ce06077a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  forceVariable: 100
+  forceVariable: 150
   rb: {fileID: 2704642462339051775}
+  speed: 400
