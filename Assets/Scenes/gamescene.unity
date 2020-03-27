@@ -869,7 +869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 220, y: -46.549988}
+  m_AnchoredPosition: {x: 220, y: -46.55005}
   m_SizeDelta: {x: 365.3, y: 93.099976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653401991
@@ -1878,6 +1878,7 @@ GameObject:
   - component: {fileID: 969874535}
   - component: {fileID: 969874534}
   - component: {fileID: 969874533}
+  - component: {fileID: 969874537}
   m_Layer: 0
   m_Name: Felt
   m_TagString: Untagged
@@ -1960,6 +1961,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!154 &969874537
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969874532}
+  m_Material: {fileID: 13400000, guid: 90137cd29efdc6e4999d16a2e00c8065, type: 2}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 0}
+  m_EnableTreeColliders: 1
 --- !u!1 &1027147693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3f9b3077fe64949b1b22cc8487d338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1316481655}
   spawnPoints:
   - {fileID: 1799149320}
   - {fileID: 914242847}
@@ -2202,14 +2215,10 @@ MonoBehaviour:
   - {fileID: 1760615767}
   - {fileID: 1254701601}
   waves:
-  - name: Warm Up
-    monsters:
-    - {fileID: 3761520336204908784, guid: fa070b566254b894f80aa06e1af76bc0, type: 3}
-    count: 3
-    rate: 1
   - name: Interesting
     monsters:
     - {fileID: 3761520336204908784, guid: fa070b566254b894f80aa06e1af76bc0, type: 3}
+    - {fileID: 3314800842183275482, guid: 4c028973bbdc57349be655625968173a, type: 3}
     count: 5
     rate: 2
   child: {fileID: 1089073341892518261, guid: 3f270fc57ca1f9843b45469b273b3906, type: 3}
@@ -2374,7 +2383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 849, y: -47.549988}
+  m_AnchoredPosition: {x: 849, y: -47.55005}
   m_SizeDelta: {x: 365.3, y: 95.099976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430552057
@@ -2738,7 +2747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 546, y: -47.549988}
+  m_AnchoredPosition: {x: 546, y: -47.55005}
   m_SizeDelta: {x: 365.3, y: 95.099976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553366794

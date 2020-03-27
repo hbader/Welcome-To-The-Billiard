@@ -16,6 +16,7 @@ public class enemySpawnerControl : MonoBehaviour
         public float rate;
     }
 
+    public UIManager manager;
     public Transform[] spawnPoints;
     public Wave[] waves;
     public GameObject child;
@@ -96,6 +97,7 @@ public class enemySpawnerControl : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _wave)
     {
+        manager.updateRound();
         state = SpawnState.SPAWNING;
 
         for (int i = 0; i < _wave.count; i++)
@@ -114,9 +116,11 @@ public class enemySpawnerControl : MonoBehaviour
         randomSpawnpoint = Random.Range(0, spawnPoints.Length);
         randomMonster = Random.Range(0, _enemies.Length);
         monster = Instantiate(_enemies[randomMonster], spawnPoints[randomSpawnpoint].position, Quaternion.identity);
-        attatchedChild = Instantiate(child, spawnPoints[randomSpawnpoint].position, Quaternion.identity);
-
-        attatchedChild.transform.parent = monster.transform;
+        if (!monster.name.Contains("Grower"))
+        {
+            attatchedChild = Instantiate(child, spawnPoints[randomSpawnpoint].position, Quaternion.identity);
+            attatchedChild.transform.parent = monster.transform;
+        }
         Debug.LogError("Enemy Spawned");
     }
 }

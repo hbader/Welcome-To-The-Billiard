@@ -19,9 +19,9 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         scoreText.text = "Score: 0";
-        roundText.text = "Round 1";
+        roundText.text = "Round 0";
         modifierText.text = "x1";
-        score = 0; round = 1; modifier = 1;
+        score = 0; round = 0; modifier = 1;
         resetButton.gameObject.SetActive(false);
         mainMenuButton.gameObject.SetActive(false);
     }

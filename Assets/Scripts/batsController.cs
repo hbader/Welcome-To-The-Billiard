@@ -12,7 +12,6 @@ public class batsController: MonoBehaviour
     GameObject target;
     public float speed;
     Vector3 directionToTarget;
-   // public GameObject explosion;
 
     private void Start()
     {
@@ -33,7 +32,7 @@ public class batsController: MonoBehaviour
                 // Instantiate(explosion, transform.position, Quaternion.identity);
                 //add kill counter maybe?
                 col.attachedRigidbody.AddForce(rb.velocity * forceVariable);
-                Destroy(gameObject);
+                Destroy(this.gameObject);
                 manager.updateScore(col.attachedRigidbody.velocity.magnitude);
             }
             else
