@@ -116,7 +116,7 @@ public class enemySpawnerControl : MonoBehaviour
         randomSpawnpoint = Random.Range(0, spawnPoints.Length);
         randomMonster = Random.Range(0, _enemies.Length);
         monster = Instantiate(_enemies[randomMonster], spawnPoints[randomSpawnpoint].position, Quaternion.identity);
-        if (!monster.name.Contains("Grower"))
+        if (!monster.name.Contains("Grower") & !monster.name.Contains("Snake"))
         {
             attatchedChild = Instantiate(child, spawnPoints[randomSpawnpoint].position, Quaternion.identity);
             attatchedChild.transform.parent = monster.transform;

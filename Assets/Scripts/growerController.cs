@@ -9,7 +9,7 @@ public class growerController: MonoBehaviour
 
     private void Start()
     {
-        growRate = new Vector3(.01f, .01f, .01f);
+        growRate = new Vector3(.001f, .001f, .001f);
     }
 
     private void Update()

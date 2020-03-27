@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 2704642462339051775, guid: fa070b566254b894f80aa06e1af76bc0,
         type: 3}
       propertyPath: m_Constraints
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3761520336204908784, guid: fa070b566254b894f80aa06e1af76bc0,
         type: 3}
@@ -54,6 +54,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ee28e0edf8f307d41b7ce0e11ff95cc9, type: 2}
+    - target: {fileID: 6443134935577136525, guid: fa070b566254b894f80aa06e1af76bc0,
+        type: 3}
+      propertyPath: forceVariable
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694044370274567369, guid: fa070b566254b894f80aa06e1af76bc0,
+        type: 3}
+      propertyPath: m_WalkableMask
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7744073542686965212, guid: fa070b566254b894f80aa06e1af76bc0,
         type: 3}
       propertyPath: m_LocalPosition.x
