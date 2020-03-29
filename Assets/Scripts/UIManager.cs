@@ -22,8 +22,8 @@ public class UIManager : MonoBehaviour
         roundText.text = "Round 0";
         modifierText.text = "x1";
         score = 0; round = 0; modifier = 1;
-        resetButton.gameObject.SetActive(false);
-        mainMenuButton.gameObject.SetActive(false);
+        //resetButton.gameObject.SetActive(false);
+        //mainMenuButton.gameObject.SetActive(false);
     }
 
     public void updateScore(float speed)

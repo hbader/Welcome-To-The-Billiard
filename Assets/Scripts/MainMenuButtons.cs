@@ -12,9 +12,6 @@ public class MainMenuButtons : MonoBehaviour
 
     public void QuitGame()
     {
-        //Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
-
         Application.Quit();
     }
 
@@ -26,5 +23,6 @@ public class MainMenuButtons : MonoBehaviour
     public void MainMenuPage()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
     }
 }
