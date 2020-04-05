@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Text scoreText;
-    public Text roundText;
-    public Text modifierText;
-    public Text gameOver;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI roundText;
+    public TextMeshProUGUI modifierText;
+    public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI gameOver;
     public Button resetButton;
     public Button mainMenuButton;
 
@@ -18,9 +20,10 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        scoreText.text = "Score: 0";
-        roundText.text = "Round 0";
-        modifierText.text = "x1";
+        scoreText.SetText("Score: {0}", 0);
+        roundText.SetText("Round {0}",0);
+        modifierText.SetText("x1");
+        highScoreText.SetText("Highscore: {0}", PlayerPrefs.GetInt("Highscore", 0));
         score = 0; round = 0; modifier = 1;
         //resetButton.gameObject.SetActive(false);
         //mainMenuButton.gameObject.SetActive(false);
@@ -29,7 +32,7 @@ public class UIManager : MonoBehaviour
     public void updateScore(float speed)
     {
         score = score + modifier;
-        scoreText.text = "Score: " + score;
+        scoreText.SetText("Score: {0}", score);
         if (speed > 8)
         {
             modifier++;
@@ -38,18 +41,23 @@ public class UIManager : MonoBehaviour
         {
             modifier = 1;
         }
-        modifierText.text = "x" + modifier;
+        modifierText.SetText( "x{0}", modifier);
     }
 
     public void updateRound()
     {
-        roundText.text = "Round " + ++round;
+        roundText.SetText("Round {0}", ++round);
     }
 
     public void showGameOver()
     {
-        gameOver.text = "Game Over.";
+        gameOver.gameObject.SetActive(true);
         resetButton.gameObject.SetActive(true);
         mainMenuButton.gameObject.SetActive(true);
+        if(PlayerPrefs.GetInt("Highscore") < score) {
+            PlayerPrefs.SetInt("Highscore", score);
+            highScoreText.SetText("Highscore: {0}", score);
+        }
+        
     }
 }
