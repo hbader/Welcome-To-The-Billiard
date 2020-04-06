@@ -74,4 +74,8 @@ public class SettingsMenu : MonoBehaviour
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
     }
 
+    public void ErasePlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
