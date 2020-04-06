@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -12,9 +13,9 @@ public class SettingsMenu : MonoBehaviour
 
     public AudioMixer audioMixer;
     Resolution[] resolutions;
-    public Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
     public Slider volSLider;
-    public Dropdown graphicsDropdown;
+    public TMP_Dropdown graphicsDropdown;
 
     private void Start()
     {

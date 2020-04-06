@@ -77,6 +77,10 @@ public class enemySpawnerControl : MonoBehaviour
         {
             nextWave = 0;
             Debug.Log("ALL WAVES COMPLETE! Looping...");
+            foreach(Wave w in waves)
+            {
+                w.count += 1; //scalability
+            }
         }
         else
         {

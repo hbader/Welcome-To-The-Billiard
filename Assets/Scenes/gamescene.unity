@@ -3555,19 +3555,13 @@ MonoBehaviour:
     monsters:
     - {fileID: 3314800842183275482, guid: 4c028973bbdc57349be655625968173a, type: 3}
     - {fileID: 3761520336204908784, guid: fa070b566254b894f80aa06e1af76bc0, type: 3}
-    count: 3
+    count: 5
     rate: 2
-  - name: Calm Before Storm
-    monsters:
-    - {fileID: 1865123098256915225, guid: 2c1fa4b2d9fcb944492e46aa22af4005, type: 3}
-    count: 1
-    rate: 1
   - name: Final Boss
     monsters:
     - {fileID: 5395037045947107574, guid: 306cec2cc52b46c40925b83c3f002944, type: 3}
     - {fileID: 3761520336204908784, guid: fa070b566254b894f80aa06e1af76bc0, type: 3}
     - {fileID: 3314800842183275482, guid: 4c028973bbdc57349be655625968173a, type: 3}
-    - {fileID: 1865123098256915225, guid: 2c1fa4b2d9fcb944492e46aa22af4005, type: 3}
     count: 6
     rate: 2
   child: {fileID: 1089073341892518261, guid: 3f270fc57ca1f9843b45469b273b3906, type: 3}
@@ -5151,7 +5145,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 8.23e-43, y: 7.398215e-33, z: 8.21e-43, w: 7.398215e-33}
+  m_BoundingSphereOverride: {x: NaN, y: 0, z: NaN, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
